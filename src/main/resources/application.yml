@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-boot-monitoring
+
+# Log incoming requests.
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        #include: ['health', 'info', 'prometheus']
+        include: '*'
